@@ -1,0 +1,29 @@
+import random
+print(" LET'S PLAY ROCK PAPER & SCISSOR ")
+l=["rock","paper","scissor"]
+print("1. Rock")
+print("2. Paper")
+print("3. Scissor")
+while True:
+    ip=input("Enter the option from list ")
+    choice=random.choice(l)
+    print(choice)
+    if (ip in l):
+        if (ip==choice):
+            print("DRAW!")
+        elif (ip=="rock" and choice=="scissor" ):
+            print("Rock smashes scissor.. You win!")
+        elif (ip=="rock" and choice=="paper" ):
+            print("Paper covers rock.. You lose!")
+        elif (ip=="paper" and choice=="rock"):
+            print("Paper covers rock.. You win!")
+        elif (ip=="paper" and choice=="scissor"):
+            print("Scissor cuts paper.. You lose!")
+        elif (ip=="scissor" and choice=="paper"):
+            print("Scissor cuts paper.. You win!")
+        elif (ip=="scissor" and choice=="rock"):
+            print("Rock beats scissor.. You lose!")
+    pa=input("PLAY AGAIN??  (YES/NO)")
+    if pa=="no":
+        break
+        

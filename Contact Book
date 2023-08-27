@@ -1,0 +1,68 @@
+n = []
+cn = []
+ed = []
+add = []
+num = 1
+ch = 0
+while True:
+    name = input("Name: ")
+    contact_number = int(input("Contact Number: "))
+    email = input("Email: ")
+    address = input("Address: ")
+    n.append(name)
+    cn.append(contact_number)
+    ed.append(email)
+    add.append(address)
+    c = input("If you want to continue adding contacts type y: ")
+    if (c == "n"):
+        break
+    num = num + 1
+print("What you want to do now ?")
+print("1. Display")
+print("2. Search Term")
+print("3. Update")
+ch = int(input("Enter your choice: "))  
+if (ch == 1):
+    print("\nName\t\tContact Number\t\tEmail\t\tAddress\n")
+    for i in range(num):
+        print("{}\t\t{}\t\t{}\t\t{}".format(n[i], cn[i], ed[i], add[i]))
+elif (ch == 2):
+    search_term = input("Enter the term you want to search: ")
+    print("Searched Result:", search_term)
+    if search_term in n:
+        index = n.index(search_term)
+        print("\nName\t\tContact Number\t\tEmail\t\tAddress\n")
+        print("{}\t\t{}\t\t{}\t\t{}".format(n[index], cn[index], ed[index], add[index]))
+    else:
+        print("No Records")
+elif (ch == 3):
+    search_term = input("Enter the term you want to update: ")
+    if search_term in n:
+        index = n.index(search_term)
+        print("1. Update Name")
+        print("2. Update Contact Number")
+        print("3. Update Email")
+        print("4. Update Address")
+        sub_ch = int(input("Enter a choice: "))
+        
+        if sub_ch == 1:
+            n = input("Enter a new name: ")
+            n.pop(index)
+            n.insert(index,n)
+        elif sub_ch == 2:
+            n = input("Enter a new contact number: ")
+            cn.pop(index)
+            cn.insert(index,n)
+        elif sub_ch == 3:
+            n = input("Enter a new email id: ")
+            ed.pop(index)
+            ed.insert(index,n)
+        elif sub_ch == 4:
+            n = input("Enter a new address: ")
+            add.pop(index)
+            add.insert(index,n)
+        print("\nName\t\tContact Number\t\tEmail\t\tAddress\n")
+        for i in range(num):
+            print("{}\t\t{}\t\t{}\t\t{}".format(n[i], cn[i], ed[i], add[i]))
+    else:
+        print("No Records")
